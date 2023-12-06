@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <style>
+        header{
+            background-color: #004d40;
+            overflow: hidden;
+        }
+        header h1{
+            text-align: center;
+            /*Color de las columnas*/
+            color: #ffffff;
+            font-size: 1.0em;
+        }
+        header h2{
+            text-align: center;
+            color: #ffffff;
+            padding: 0.5em;
+            /* Tamaño de la letra*/
+            font-size: 1.0em;
+        }
+        header img{
+            width: 5%;
+            height: 7%;
+            position: absolute;
+            top: 0;
+            left: 15px;
+            border: 2px solid #ffffff;
+        }
+        nav{
+            background-color: #004d40;
+            min-height: 2em;
+            padding: 1.5em;
+            border: 2px solid #ffffff;
+        }
+        /* Para realizar la lista horizontal*/
+        nav li{
+            display: inline;
+            padding: 0.2em;
+        }
+        /* Para los vinculos de las listas */
+        nav a{
+            padding: 0.7em;
+            color: white;
+            background-color: #004d40;
+            /* Margen a fuera tendrá */
+            margin: 0.9;
+            /*Elimina el subrayado del vinculo*/
+            text-decoration: none;
+            cursor: pointer;
+        }
+        nav a:hover{
+            color: black;
+            background-color: blueviolet;
+            border-radius: 120% 50%;
+            box-shadow: 2px 2px 2px 2px yellow;
+        }
+        .container {
+            background-color: aqua;
+            width: 450px;
+            box-shadow: 3px 3px 3px 3px black;
+        }
+        label{
+            font-size: 18px;
+            text-shadow: 2px 2px 2px black;
+            font-family: monospace;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-group {
+            display: block;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        input{
+            font-size: 18px;
+            text-align: justify;
+            font-family: monospace;
+            box-shadow: 3px 3px 3px 3px blue;
+            border-radius: 20px;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        #id_group{
+            color: white;
+            box-shadow: 3px 3px 3px 3px black;
+            background-color: darkcyan;
+        }
+        #id_group:focus{
+            color: black;
+            background-color: #b2dfdb;
+        }
+        .btn-primary{
+            width: 32%;
+            height: 20%;
+            font-family: cursive;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 1.5em;
+            color: white;
+            text-shadow: 2px 2px 2px black;
+            box-shadow: 2px 2px 2px 2px black;
+            background-color: darkcyan;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .btn-primary:hover{
+            color: darkblue;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            REGISTRADOR DE USUARIOS
+        </h1>
+        <h2> PROGRAMACIÓN III </h2>
+        <img src="https://w7.pngwing.com/pngs/419/265/png-transparent-logo-fruit-b2b-food-logo-flower.png">
+    </header>
+    <!-- Nacegación en nuestra página-->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}" id="a">Inicio</a></li>
+            <li><a href="{% url 'add_cat' %}"id="b" >Añadir Categoria</a></li>
+            <li><a href="{% url 'add_frut' %}"id="c" >Añadir Fruta</a></li>
+            <li><a href="{% url 'add_provf' %}"id="d" >Añadir Proveedor</a></li>
+            <li><a href="{% url 'logout' %}"id="e" > Cerrar sesión</a></li>
+          </ul>
+        </ul>
+    </nav>
+    <!--Registro de usuario-->
+<div class="container">
+    <h1>Registro de Usuario</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Nombre de usuario:
+            </label>
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Correo electrónico:
+            </label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.pasword1.id_for_label }}">Contraseña:
+            </label>
+            {{ form.password1 }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.password2.id_for_label }}">Confirmar Contraseña:
+            </label>
+            {{ form.password2 }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.group.id_for_label }}">Rol:
+            </label>
+            {{ form.group }}
+        </div>
+        <input type="submit" class="btn btn-primary" value="Registrar">
+    </form>
+</div>
+</body>
+</html>

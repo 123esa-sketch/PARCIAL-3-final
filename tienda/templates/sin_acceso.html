@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Autorizado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        h1{
+            background-color: #b2dfdb;
+            text-align: center;
+            padding: 0.1em;
+            font-size: 22px;
+            border-radius: 0.9em;
+            font-family: monospace;
+            font-style: oblique;
+            box-shadow: 1px 1px 1px 1px black;
+        }
+        .container {
+            background-color: aqua;
+            width: 450px;
+            box-shadow: 3px 3px 3px 3px black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top:  30px;
+        }
+        .container a{
+            padding: 20px;
+            margin-top: 20px;
+        }
+        button{
+            background-color: white;
+            padding: 12px;
+            font-family: cursive;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        button:hover{
+            color: white;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper teal darken-4">
+          <a href="#" class="brand-logo"><img class="fruta" src="https://w7.pngwing.com/pngs/419/265/png-transparent-logo-fruit-b2b-food-logo-flower.png" width="50" height="65" style="border-radius: 45%;"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'add_cat' %}">Añadir Cat.</a></li>
+            <li><a href="{% url 'add_frut' %}">Añadir Fruta</a></li>
+            <li><a href="{% url 'add_provf' %}">Añadir Prov.</a></li>
+            <li><a href="{% url 'categorias' %}">Categorias</a></li>
+            <li><a href="{% url 'proveedores' %}">Proveedores</a></li>
+            <li><a href="{% url 'frutas' %}">Frutas</a></li>
+            <li><a href="#">{{ user.username }}</a></li>
+            <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1> No Autorizado </h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5PV44NtAbWycwxfxTo4Y-hvNDzLXQ7UAdPtPSi0qTIgrQVaMNfxHUH1477fE2NVQi2nA&usqp=CAU">
+        <a href="{% url 'home' %}"> <button> Volver </button></a>
+    </div>
+</body>
+</html>

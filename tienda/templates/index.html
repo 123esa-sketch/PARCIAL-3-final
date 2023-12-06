@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        body {
+            background-color: #deeebc;
+        }
+
+        section {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #deeebc;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        #fruta {
+            width: 50;
+            height: 65;
+            border-radius: 45%;
+        }
+
+        section h2 {
+            text-align: center;
+            padding: 0.5em;
+            color: black;
+            font-size: 24px;
+            font-family: cursive;
+        }
+
+        section h3 {
+            text-align: center;
+            padding: 0.3em 3em;
+            color: black;
+            font-size: 22px;
+        }
+
+        article {
+            width: 100%;
+            margin: 2.3em;
+            padding: 0.9em 5em;
+            background-color: #f1f1f1;
+            border: 1px solid blue;
+        }
+
+        article p {
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        aside {
+            background-color: teal darken-4;
+            float: inline-end;
+        }
+
+        #lado {
+            align-items: center;
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid white;
+            background-color: teal darken-4;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #lado a:hover {
+            font-size: 20px;
+            text-align: center;
+            padding: 0.2em 1em;
+            color: white;
+            color: yellow;
+        }
+
+        #lado h2 {
+            font-size: 18px;
+            padding: 0.2em 1em;
+        }
+        .image-container{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; 
+        }
+        .image-container img{
+            margin: 0 10px;
+            width: 30%;
+            height: 10%;
+            border-radius: 40%;
+            transition: transform 0.3s ease;
+        }
+        .image-container img:hover{
+            transform: scale(2.1);
+        }
+</style>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper teal darken-4">
+          <a href="#" class="brand-logo"><img class="fruta" src="https://w7.pngwing.com/pngs/419/265/png-transparent-logo-fruit-b2b-food-logo-flower.png" width="50" height="65" style="border-radius: 45%;"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'add_cat' %}">Añadir Cat.</a></li>
+            <li><a href="{% url 'add_frut' %}">Añadir Fruta</a></li>
+            <li><a href="{% url 'add_provf' %}">Añadir Prov.</a></li>
+            <li><a href="{% url 'categorias' %}">Categorias</a></li>
+            <li><a href="{% url 'proveedores' %}">Proveedores</a></li>
+            <li><a href="{% url 'frutas' %}">Frutas</a></li>
+            <li><a href="#">{{ user.username }}</a></li>
+            <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+          </ul>
+        </div>
+    </nav>
+    <body>
+            <section>
+                <h2> EL MUNDO DEL COMERCIO DE LAS FRUTAS </h2>
+                <h3> Importancia de las Frutas</h3>
+                
+                <article>
+                    <p>
+                        En el fresco amanecer de un mercado rebosante de colores y fragancias, la página de las frutas 
+                        se despierta con la promesa de un festín para los sentidos. Las pirámides de manzanas rojas destellan 
+                        como joyas en la luz matutina, mientras que los plátanos amarillos despliegan su exuberancia en elegantes racimos. 
+                        Las fresas, como rubíes escondidos entre hojas verdes, parecen susurrar secretos de dulzura. Los cítricos, con su paleta
+                        vibrante, exhalan un aroma cítrico que impregna el aire. En este rincón del paraíso terrenal, cada página es un lienzo de 
+                        vitalidad, invitando a explorar la frescura y la diversidad que la naturaleza ofrece generosamente.
+                    </p>
+                    <div class="image-container">
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/frutas-1552246920.jpg"> 
+                        <img src="https://img.freepik.com/vector-gratis/coleccion-frutas-dibujadas-mano_23-2148941359.jpg">
+                    </div>
+                </article>
+                <h3> Datos importantes</h3>
+                <article>
+                    <p>
+                        En el reino de las frutas, algunas destacan como auténticas joyas de la naturaleza, regalando no solo su exquisito sabor, 
+                        sino también una explosión de beneficios para la salud. Las jugosas bayas de acai, con su intensidad morada, son aclamadas 
+                        por su contenido antioxidante, mientras que el aguacate, con su textura cremosa y rica en grasas saludables, se erige como
+                        un superalimento versátil. Las piñas, con su dulzura tropical, transportan a los sentidos a un paraíso isleño, mientras que 
+                        las uvas, en racimos jugosos, despiertan el paladar con su equilibrio entre dulzura y acidez. En esta sinfonía de sabores, 
+                        las frutas no solo son delicias para el gusto, sino también guardianes de nuestro bienestar, haciendo de cada bocado una 
+                        celebración de la salud y el placer.
+                    </p>
+                    <div class="image-container">
+                        <img src="https://uchile.cl/.imaging/default/dam/imagenes/INTA/especiales/evaluacion_frutas_verduras.png/jcr:content.png"> 
+                        <img src="https://images.hola.com/imagenes/belleza/caraycuerpo/2017052995009/frutas-adelgazar-operacion-bikini/0-453-259/sandia-t.jpg?tx=w_680">
+                    </div>
+                </article>
+                <h3> Jugos De Frutas</h3>
+                <article>
+                    <p>
+                        En el apasionante mundo de la preparación de jugos de frutas, la creatividad y la frescura se fusionan para ofrecer experiencias 
+                        gustativas inigualables. Comienza seleccionando frutas maduras y vibrantes, como fresas jugosas, naranjas llenas de vitalidad y 
+                        mangos exquisitamente maduros. Luego, con destreza y entusiasmo, pela y corta las frutas en trozos manejables, listos para ser 
+                        transformados en elixires refrescantes. Experimenta con combinaciones únicas; tal vez una mezcla de piña tropical con un toque de 
+                        menta fresca, o la clásica unión de plátano y bayas silvestres. Tritura y mezcla las frutas con precisión, y disfruta del néctar 
+                        resultante, un arcoíris líquido que nutre el cuerpo y deleita el paladar. ¡Explora, mezcla y descubre la magia de los jugos de 
+                        frutas, una explosión de sabores que despertarán tus sentidos y te sumergirán en el placer de lo natural!
+                    </p>
+                    <div class="image-container">
+                        <img src="https://media3.bosch-home.com/Images/600x/MCIM02716002_jugo-de-papaya-platano-y-naranja.jpg"> 
+                        <img src="https://www.elfinanciero.com.mx/resizer/3BR_b_1KixJTz5I8pVFsVsLFq3E=/400x267/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/3QTEJ6OZ35HFBHJRATRX67GIPA.jpeg">
+                    </div>
+                </article>
+            </section>
+            <aside>
+                <div id="lado">
+                    <h2> Acceder </h2>
+                    <p>
+                        <a href="{% url 'registrar' %}">Registrar</a>
+                    </p>
+                    <a href="{% url 'login' %}">Iniciar sesión</a>
+               </div>
+            </aside>
+        <footer class="page-footer teal darken-4" style="text-align:inherit;">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <img src="https://qubilo.com/media/images/python_kf8vFR4.original.jpg" width="270" height="210">
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Desarrolladores</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3">Brandon Ésau Zetino</a></li>
+                    <li><a class="grey-text text-lighten-3">Gloria Estefany Hernández Guevara</a></li>
+                    <li><a class="grey-text text-lighten-3">Bryan José Chicas Amaya</a></li>
+                  </ul>
+                  <h6> APIS CREADAS </h6>
+                <ul>
+                    <li><a href="{% url 'api_1' %}"> APP 1</a></li>
+                    <li><a href="{% url 'api_2' %}">APP 2</a></li>
+                    <li><a href="{% url 'api_3' %}">APP 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2023 PROGRAMARCIÓN III
+              </div>
+            </div>
+          </footer>
+    </body>  
+</body>
+</html>
